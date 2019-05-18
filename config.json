@@ -1,5 +1,5 @@
 {
-    "token": "NTc3MDM5ODM1MTg1OTM4NDMz.XNfSYQ.M5HS4nsd6ylwxEr00BWykt90dJU",
+    "token": "SOME_TOKEN",
     "prefix": "!",
     "databaseUrl": "mongodb://localhost:27017/botdb"
 }
