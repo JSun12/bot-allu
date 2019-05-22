@@ -25,7 +25,6 @@ for (var fileName of commandFiles) {
 
 client.on('message', message => {
     if (!message.content.startsWith(config.prefix)) {
-        console.log('Message is not a command');
         return;
     }
 
