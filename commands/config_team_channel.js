@@ -18,14 +18,17 @@ exports.run = async(client, message, args) => {
         }
     }
 
-    mongodb.connect(config.databaseUrl, (err, client) => {
+    mongodb.connect(config.databaseUrl, (err, dbClient) => {
         if (err) {
-            message.channel.send('CHANGE THIS TO AN ACTUAL ERROR MESSAGE');
+            message.channel.send('Error storing server team channels.');
+            console.log(err);
+            return;
         }
-        let db = client.db("botdb");
+
+        let db = dbClient.db("botdb");
         db.collection('config')
             .update({_id: message.guild.id}, {$set: {'teamChannels': args}});
-        client.close();
+        dbClient.close();
         message.channel.send('Team channels have been set.');
     });
 }

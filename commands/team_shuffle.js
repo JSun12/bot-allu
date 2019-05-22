@@ -13,17 +13,23 @@ exports.run = async(client, message, args) => {
 
     let voiceChannels = utils.getVoiceChannels(client);
     
-    mongodb.connect(config.databaseUrl, (err, client) => {
+    mongodb.connect(config.databaseUrl, (err, dbClient) => {
         if (err) {
-            message.channel.send('CHANGE THIS TO AN ACTUAL ERROR MESSAGE');
+            message.channel.send('Error fetching server channels.');
+            console.log(err);
+            return;
         }
-        let db = client.db("botdb");
+
+        let db = dbClient.db("botdb");
         db.collection('config').findOne({_id: message.guild.id}, (err, res) => {
             if (err) {
-                message.channel.send('Database Error (CHANGE THIS TO A BETTER ISSUE)');
+                message.channel.send('Error fetching server channels.');
+                console.log(err);
+                return;
             }
+
             teamChannels = res.teamChannels;
-            client.close();
+            dbClient.close();
 
             let teamA = [];
             let teamB = [];

@@ -28,21 +28,24 @@ client.on('message', message => {
         return;
     }
 
-    mongodb.connect(config.databaseUrl, (err, client) => {
+    mongodb.connect(config.databaseUrl, (err, dbClient) => {
         if (err) {
-            message.channel.send('CHANGE THIS TO AN ACTUAL ERROR MESSAGE');
+            message.channel.send('Error fetching server info.');
+            console.log(err);
+            return;
         }
-        let db = client.db("botdb");
+
+        let db = dbClient.db("botdb");
         let found = db.collection('config').find({'_id': message.guild.id}).count();
         found.then((numItems) => {
             if (numItems == 0) {
                 let newServerConfig = {_id: message.guild.id, 'teamChannels': []};
                 db.collection('config').insertOne(newServerConfig, (err, res) => {
                     if (err) {
-                        message.channel.send('CHANGE THIS TO AN ACTUAL ERROR MESSAGE');
+                        message.channel.send('Error storing server info.');
                     }
-                    console.log('Server config saved...');
-                    client.close();
+                    console.log('New server config saved...');
+                    dbClient.close();
                 });
             }
         })
