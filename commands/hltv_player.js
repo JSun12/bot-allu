@@ -22,21 +22,21 @@ exports.run = async(client, message, args) => {
 
         getPlayerPromise.then((player) => {
             let playerEmbed = new Discord.RichEmbed()
-                            .setColor('#0099ff')
-                            .setTitle(player.ign)
-                            .setURL(`https://www.hltv.org/stats/players/${playerId}/${player.ign}`)
-                            .setDescription(player.name)
-                            .setThumbnail(player.image)
-                            .addField('Twitter', player.twitter)
-                            .addField('Twitch', player.twitch)
-                            .addBlankField()
-                            .addField('Stats For Past 3 Months', '\u200b')
-                            .addField('Rating', player.statistics.rating)
-                            .addField('Kills Per Round', player.statistics.killsPerRound)
-                            .addField('Headshots', player.statistics.headshots)
-                            .addField('Maps Played', player.statistics.mapsPlayed)
-                            .addField('Deaths Per Round', player.statistics.deathsPerRound)
-                            .addField('Round Contributed', player.statistics.roundsContributed);
+                              .setColor('#0099ff')
+                              .setTitle(player.ign)
+                              .setURL(`https://www.hltv.org/stats/players/${playerId}/${player.ign}`)
+                              .setDescription(player.name)
+                              .setThumbnail(player.image)
+                              .addField('Twitter', player.twitter)
+                              .addField('Twitch', player.twitch)
+                              .addBlankField()
+                              .addField('Stats For Past 3 Months', '\u200b')
+                              .addField('Rating', player.statistics.rating)
+                              .addField('Kills Per Round', player.statistics.killsPerRound)
+                              .addField('Headshots', player.statistics.headshots)
+                              .addField('Maps Played', player.statistics.mapsPlayed)
+                              .addField('Deaths Per Round', player.statistics.deathsPerRound)
+                              .addField('Round Contributed', player.statistics.roundsContributed);
 
             message.channel.send(playerEmbed);
         });
