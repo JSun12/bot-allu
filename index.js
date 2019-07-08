@@ -29,7 +29,7 @@ client.on('message', message => {
         return;
     }
 
-    mongodb.connect(config.databaseUrl, (err, dbClient) => {
+    mongodb.connect(process.env.MONGODB_URL, (err, dbClient) => {
         if (err) {
             message.channel.send('Error fetching server info.');
             console.log(err);
