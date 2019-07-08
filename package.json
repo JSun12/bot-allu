@@ -20,6 +20,7 @@
     "discord.js": "^11.5.0",
     "hltv": "^2.14.2",
     "mongodb": "^3.2.4",
+    "node-cache": "^4.2.0",
     "request": "^2.88.0"
   }
 }
