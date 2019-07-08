@@ -9,7 +9,8 @@ client.once('ready', () => {
     console.log('EZ4ENCE');
 });
 
-client.login(config.token);
+require('dotenv').config();
+client.login(process.env.DISCORD_TOKEN);
 
 // resolve available command modules and map it to command name
 client.availableCommands = new Discord.Collection();

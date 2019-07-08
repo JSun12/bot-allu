@@ -1,5 +1,4 @@
 {
-    "token": "SOME_TOKEN",
     "prefix": "!",
     "databaseUrl": "mongodb://localhost:27017/botdb"
 }
