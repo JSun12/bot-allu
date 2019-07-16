@@ -60,7 +60,6 @@ client.on('message', message => {
         let cmdModule = client.availableCommands.get(cmd);
         cmdModule.run(client, message, args);
     } catch (err) {
-        message.channel.send('Invalid Command!');
         console.error(err);
     }
 });
