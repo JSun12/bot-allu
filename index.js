@@ -6,7 +6,7 @@ const config = require('./config.json');
 const client = new Discord.Client(); 
 
 client.once('ready', () => {
-    console.log('EZ4ENCE');
+    console.log('RUSH B');
 });
 
 require('dotenv').config();

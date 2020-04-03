@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
     const aboutEmbed = new Discord.RichEmbed()
-                                    .setTitle('Bot Allu')
+                                    .setTitle('chiken')
                                     .addBlankField()
                                     .addField('!player <player name>', 'Show HLTV player profile.')
                                     .addField('!team <team name>', 'Show HLTV team profile.')

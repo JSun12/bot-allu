@@ -1,5 +1,5 @@
 {
-  "name": "bot-allu",
+  "name": "chiken",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JSun12/bot-allu.git"
+    "url": "git+https://github.com/JSun12/chiken.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JSun12/bot-allu/issues"
+    "url": "https://github.com/JSun12/chiken/issues"
   },
-  "homepage": "https://github.com/JSun12/bot-allu#readme",
+  "homepage": "https://github.com/JSun12/chiken#readme",
   "dependencies": {
     "discord.js": "^11.5.0",
     "dotenv": "^8.0.0",
-    "hltv": "^2.14.2",
+    "hltv": "^2.19.3",
     "mongodb": "^3.2.4",
     "node-cache": "^4.2.0",
     "request": "^2.88.0"
